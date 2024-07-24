@@ -1,3 +1,5 @@
+// variables
+
 void main(List<String> args) {
   final String pokemon = 'Ditto';
   final int hp = 100;
