@@ -1,10 +1,18 @@
 void main(List<String> args) {
-  print(greetEveryone());
+  // print(greetEveryone());
   print(greetTwo());
+
+  print(addTwoNumbers(2, 3));
 }
 
-String greetEveryone() {
-  return "Hello Everyone";
-}
+// String greetEveryone() {
+//   return "Hello Everyone";
+// }
+String greetTwo() => "Hello Everyone 2"; 
 
-String greetTwo()=> "Hello Everyone 2"; // Short hand syntax for functions
+// strict type
+/* int addTwoNumbers(int a, int b) {
+  return a + b;
+} */
+
+int addTwoNumbers(int a, int b) => a + b;
