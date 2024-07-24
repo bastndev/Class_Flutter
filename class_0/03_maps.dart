@@ -28,5 +28,9 @@ void main(List<String> args) {
     'sprites': <int, dynamic>{1: 'ditto/front.png', 2: 'ditto/back.png'}
   };
 
-  print('Name: ${pokemon['sprites'][1]}');
+  print(pokemon);
+  print('Name: ${pokemon['name']}');
+
+  print('Back:${pokemon['sprites'][2]}') ;
+  print('Front: ${pokemon['sprites'][1]}');
 }
