@@ -3,6 +3,7 @@ void main(List<String> args) {
   print(greetTwo());
 
   print(addTwoNumbers(2, 3));
+  print(addTwoNumbersOptional(2, 3));
 }
 
 // String greetEveryone() {
@@ -16,3 +17,5 @@ String greetTwo() => "Hello Everyone 2";
 } */
 
 int addTwoNumbers(int a, int b) => a + b;
+
+int addTwoNumbersOptional(int a, [int b = 0]) => a + b;
