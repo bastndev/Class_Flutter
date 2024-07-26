@@ -40,3 +40,17 @@
   print(a is int); // true
   print(b is! int); // true
 } */
+
+/* void main(List<String> args) {
+  var a = 'example'; // Definir la variable a
+  var b = a;
+  print(b);
+
+} */
+
+// Other OPERATOR
+void main(List<String> args) {
+  int a = 5; // Definir la variable a
+  int b = a ^ 3; // Aplicar el operador XOR con 3
+  print(b); // Imprimir el resultado
+}
