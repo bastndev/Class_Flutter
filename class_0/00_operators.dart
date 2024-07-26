@@ -24,8 +24,19 @@
 }
  */
 
-void main(List<String> args) {
+// `??` OPERATOR
+/* void main(List<String> args) {
   String? name = 'Maria'; // This will cause an error because null safety is enforced in Dart.
   String realName = name ?? 'Unknown = null'; // RealName is 'Unknown'
   print(realName);
 }
+ */
+
+// Type OPERATOR
+/* void main(List<String> args) {
+  int a = 3;
+  String b = '3';
+
+  print(a is int); // true
+  print(b is! int); // true
+} */
