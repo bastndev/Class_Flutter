@@ -11,7 +11,6 @@ abstract class EnergyPlant {
   void consumeEnergy(double amount);
 }
 
-// --- solar Plant
 class SolarPlant extends EnergyPlant {
   SolarPlant({
     required double initialEnergy,
@@ -42,7 +41,7 @@ class NuclearPlant implements EnergyPlant {
   }
 }
 
-double changePhone(NuclearPlant plant) {
+double changePhone(EnergyPlant plant) {
   if (plant.energyLeft < 10) {
     throw Exception('Energy is low');
   }
@@ -50,8 +49,9 @@ double changePhone(NuclearPlant plant) {
 }
 
 void main(List<String> args) {
-  // final solarPlant = SolarPlant(initialEnergy: 100);
-  final nuclearPant = NuclearPlant(energyLeft: 100);
+  final solarPlant = SolarPlant(initialEnergy: 100);
+  final nuclearPant = NuclearPlant(energyLeft: 1000);
 
+  print('Solar: ${changePhone(solarPlant).toInt()}% ');
   print('Solar: ${changePhone(nuclearPant).toInt()}% ');
 }
