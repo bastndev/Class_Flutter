@@ -1,13 +1,18 @@
 Future<String> httpGet(String url) async {
   await Future.delayed(Duration(seconds: 2));
-  return 'Hello World https:API';
+  throw 'Could not fetch API';
+  // return 'Hello World https:API';
 }
 
 void main(List<String> args) async {
   print('Start Program');
 
-  final value = await httpGet('https://api.com');
-  print(value);
+  try {
+    final value = await httpGet('https://api.com');
+    print(value);
+  } catch (e) {
+    print('Error: $e');
+  }
 
   print('end Program');
 }
