@@ -7,8 +7,10 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('HomeScreen  Testing to Linux'),
+        child: Text('HomeScreen 2  Testing to Linux'),
       ),
     );
   }
 }
+// path: lib/src/widgets/login.dart
+// testing 2 version is good performance but ... 
