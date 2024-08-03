@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'My First Flutter App',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('My First Flutter App 2'),
+          title: const Text('My First Flutter App 322'),
         ),
         body: const Center(
           child: Text('Hello World!'),
