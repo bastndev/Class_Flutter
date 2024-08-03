@@ -1,8 +1,8 @@
-import 'package:class_01/src/routes/pages.dart';
-import 'package:class_01/src/routes/routes.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main(List<String> args) {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -11,8 +11,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.home,
-      routes: Pages.route,
+      title: 'My First Flutter App',
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('My First Flutter App 2'),
+        ),
+        body: const Center(
+          child: Text('Hello World!'),
+        ),
+      ),
     );
   }
 }
