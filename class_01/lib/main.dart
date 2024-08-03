@@ -23,5 +23,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// testing to create a new branch
