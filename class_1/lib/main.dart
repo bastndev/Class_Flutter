@@ -1,4 +1,4 @@
-import 'package:class_1/presentation/screens/counter_screen.dart';
+import 'package:class_1/presentation/screens/counter/counter_screen.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
