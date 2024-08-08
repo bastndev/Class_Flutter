@@ -11,12 +11,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'My First Flutter',
       home: Scaffold(
         appBar: AppBar(
           title: const Text('My First Flutter '),
         ),
-        body: const Center(
+        body:  const Center(
           child: Text('Hello World!'),
         ),
       ),
