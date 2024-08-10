@@ -88,7 +88,11 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return FloatingActionButton(
+      enableFeedback: true , // hace que vibre el boton o de un sonido si no tiene vibracions
+      elevation: 0, // sobra "shadow" del boton
+      backgroundColor: Colors.orange,
       onPressed: onPressed,
       child: Icon(icon),
     );
