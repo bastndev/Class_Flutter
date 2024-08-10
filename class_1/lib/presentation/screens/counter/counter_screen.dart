@@ -1,3 +1,4 @@
+import 'package:class_1/presentation/screens/box.dart';
 import 'package:flutter/material.dart';
 
 class CounterScreen extends StatefulWidget {
@@ -27,10 +28,20 @@ class _CounterScreenState extends State<CounterScreen> {
           ),
         ],
       ),
+      // --- -- --- 3 buttons in bottom
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const Row(
+              children: [
+                BoxContainer(color: Colors.red),
+                SizedBox(width: 20),
+                BoxContainer(color: Colors.orange),
+                SizedBox(width: 20),
+                BoxContainer(color: Colors.blue),
+              ],
+            ),
             Text('$number',
                 style: const TextStyle(
                     fontSize: 150, fontWeight: FontWeight.w100)),
@@ -88,9 +99,9 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return FloatingActionButton(
-      enableFeedback: true , // hace que vibre el boton o de un sonido si no tiene vibracions
+      enableFeedback:
+          true, // hace que vibre el boton o de un sonido si no tiene vibracions
       elevation: 0, // sobra "shadow" del boton
       backgroundColor: Colors.orange,
       onPressed: onPressed,
