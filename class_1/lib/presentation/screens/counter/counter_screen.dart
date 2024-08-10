@@ -39,14 +39,36 @@ class _CounterScreenState extends State<CounterScreen> {
           ],
         ),
       ),
-      floatingActionButton:  const Column(
+      floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          CustomButton(icon: Icons.refresh),
-          SizedBox(height: 10),
-          CustomButton(icon: Icons.exposure_minus_1),
-          SizedBox(height: 10),
-          CustomButton(icon: Icons.plus_one,),
+          CustomButton(
+            icon: Icons.refresh,
+            onPressed: () {
+              setState(() {
+                number = 0;
+              });
+            },
+          ),
+          const SizedBox(height: 10),
+          CustomButton(
+            icon: Icons.exposure_minus_1,
+            onPressed: () {
+              setState(() {
+                if (number == 0) return; // quiere decir que si es 0 no aga nada
+                number--;
+              });
+            },
+          ),
+          const SizedBox(height: 10),
+          CustomButton(
+            icon: Icons.plus_one,
+            onPressed: () {
+              setState(() {
+                number++;
+              });
+            },
+          ),
         ],
       ),
     );
@@ -55,17 +77,19 @@ class _CounterScreenState extends State<CounterScreen> {
 
 // --- -- --- 3 buttons in bottom
 class CustomButton extends StatelessWidget {
-  final IconData icon;
+  final IconData icon; //propiedad
+  final VoidCallback? onPressed;
 
   const CustomButton({
     super.key,
     required this.icon,
+    this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      onPressed: () {},
+      onPressed: onPressed,
       child: Icon(icon),
     );
   }
