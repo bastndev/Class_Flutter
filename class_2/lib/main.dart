@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectorColor: 2).theme(),
+      // only have 5 themes
+      theme: AppTheme(selectorColor: 1).theme(),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Flutter APP'),

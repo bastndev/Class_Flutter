@@ -21,6 +21,7 @@ class AppTheme {
   ThemeData theme() {
     return ThemeData(
       colorSchemeSeed: _colorThemes[selectorColor],
+      // brightness: Brightness.dark, // dark mode
     );
   }
 }
