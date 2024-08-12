@@ -1,5 +1,5 @@
 import 'package:class_2/config/theme/app_theme.dart';
-import 'package:class_2/presentation/chat/chat_screen.dart';
+import 'package:class_2/presentation/screen/chat/chat_screen.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // only have 5 themes
-      theme: AppTheme(selectorColor: 1).theme(),
+      theme: AppTheme(selectorColor: 0).theme(),
       home: const ChatScreen(),
     );
   }
