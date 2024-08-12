@@ -41,7 +41,6 @@ class _ChatView extends StatelessWidget {
               ),
             ),
             const Text('Chat View'),
-            
           ],
         ),
       ),
