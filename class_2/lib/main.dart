@@ -1,3 +1,4 @@
+import 'package:class_2/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -11,12 +12,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: AppTheme().theme(),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Flutter APP'),
+          centerTitle: true,
         ),
-        body: const Center(
-          child: Text('Hello World!'),
+        body: Center(
+          child: FilledButton.tonal(
+            onPressed: () {},
+            child: const Text('Click me'),
+          ),
         ),
       ),
     );
