@@ -13,7 +13,7 @@ class ChatScreen extends StatelessWidget {
             backgroundImage: NetworkImage('https://i.pravatar.cc/150?img=1'),
           ),
         ),
-        title: const Text('Lucia ❤️'),
+        title: const Text('Lucia 💙'),
       ),
     );
   }
