@@ -42,6 +42,15 @@ class _ImageBubble extends StatelessWidget {
         width: size.width * 0.7,
         height: 150,
         fit: BoxFit.cover,
+        loadingBuilder: (context, child, loadingProgress) {
+          if (loadingProgress == null) return child;
+
+          return SizedBox(
+            width: size.width * 0.7,
+            height: 150,
+            child: Image.asset('assets/gif/loading.gif'),
+          );
+        },
       ),
     );
   }
