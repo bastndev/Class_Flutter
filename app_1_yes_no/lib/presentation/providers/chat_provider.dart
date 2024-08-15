@@ -10,6 +10,7 @@ class ChatProvider extends ChangeNotifier {
   ];
 
   Future<void> sendMessage(String text) async {
+    if (text.isEmpty) return;
     final newMessage = Message(text: text, fromWho: FromWho.me);
     listMessage.add(newMessage);
 
@@ -17,7 +18,9 @@ class ChatProvider extends ChangeNotifier {
     moveScrollBottom();
   }
 
-  void moveScrollBottom() {
+  Future<void> moveScrollBottom() async {
+    await Future.delayed(const Duration(milliseconds: 100));
+
     chatScrollController.animateTo(
       chatScrollController.position.maxScrollExtent,
       duration: const Duration(milliseconds: 300),
