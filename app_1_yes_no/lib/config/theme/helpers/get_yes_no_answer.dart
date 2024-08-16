@@ -10,10 +10,6 @@ class GetYesNoAnswer {
 
     final YesNoModel yesNoModel = YesNoModel.fromJson(response.data);
 
-    return Message(
-      text: yesNoModel.answer,
-      fromWho: FromWho.her,
-      imgUrl: yesNoModel.image,
-    );
+    return yesNoModel.toMessageEntity();
   }
 }
