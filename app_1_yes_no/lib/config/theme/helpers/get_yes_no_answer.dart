@@ -1,4 +1,5 @@
 import 'package:class_2/domain/entities/message.dart';
+import 'package:class_2/infrastructure/models/yes_no_model.dart';
 import 'package:dio/dio.dart';
 
 class GetYesNoAnswer {
@@ -7,10 +8,12 @@ class GetYesNoAnswer {
   Future<Message> getAnswer() async {
     final response = await _dio.get('https://yesno.wtf/api');
 
+    final YesNoModel yesNoModel = YesNoModel.fromJson(response.data);
+
     return Message(
-      text: response.data['answer'],
+      text: yesNoModel.answer,
       fromWho: FromWho.her,
-      imgUrl: response.data['image'],
+      imgUrl: yesNoModel.image,
     );
   }
 }
