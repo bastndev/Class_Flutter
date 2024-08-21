@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:widgets_app/hom_page.dart';
+import 'package:widgets_app/config/theme/app_theme.dart';
 
-void main() {
+void main(List<String> args) {
   runApp(const MyApp());
 }
 
@@ -12,11 +12,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      theme: AppTheme(selectedColor: 3).getTheme(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Flutter APP'),
+        ),
+        body: Center(
+            child: FilledButton(
+          onPressed: () {},
+          child: const Text('Hello'),
+        )),
       ),
-      home: const HomePage(),
     );
   }
 }
