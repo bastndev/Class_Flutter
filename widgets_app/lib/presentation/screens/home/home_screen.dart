@@ -31,8 +31,12 @@ class _HomeView extends StatelessWidget {
 
         return ListTile(
           leading: Icon(menuItem.icon, color: colors),
+          trailing: Icon(Icons.arrow_forward_ios, color: colors),
           title: Text(menuItem.title),
           subtitle: Text(menuItem.subTitle),
+          onTap: () {
+            // -TODO: Navigate to the selected screen
+          },
         );
       },
     );
