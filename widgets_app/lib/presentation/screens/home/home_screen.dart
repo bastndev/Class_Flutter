@@ -21,11 +21,19 @@ class _HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme.primary;
+
     return ListView.builder(
+      physics: const BouncingScrollPhysics().parent,
       itemCount: appMenuItems.length,
       itemBuilder: (context, index) {
         final menuItem = appMenuItems[index];
-        return Text(menuItem.title);
+
+        return ListTile(
+          leading: Icon(menuItem.icon, color: colors),
+          title: Text(menuItem.title),
+          subtitle: Text(menuItem.subTitle),
+        );
       },
     );
   }

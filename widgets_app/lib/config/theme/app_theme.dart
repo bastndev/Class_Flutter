@@ -24,7 +24,7 @@ class AppTheme {
         colorSchemeSeed: colorList[selectedColor],
         // --- --- --- Center AppBar Title 
         appBarTheme: const AppBarTheme(
-          centerTitle: true,
+          centerTitle: false,
         ),
       );
 }
