@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_app/presentation/screens/widget/custom_button.dart';
 
 class ButtonsScreen extends StatelessWidget {
   const ButtonsScreen({super.key});
@@ -25,7 +26,7 @@ class _ButtonsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = Theme.of(context).colorScheme;
+    final theme = Theme.of(context).colorScheme.primary;
 
     return SizedBox(
       width: double.infinity,
@@ -69,14 +70,14 @@ class _ButtonsView extends StatelessWidget {
               icon: const Icon(Icons.add),
             ),
             // -TODO: Add custom button
-
+            const CustomButton(),
             // --- --- ---
             IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
             IconButton(
               onPressed: () {},
               icon: const Icon(Icons.add),
               style: ButtonStyle(
-                backgroundColor: WidgetStateProperty.all(colors.primary),
+                backgroundColor: WidgetStateProperty.all(theme),
                 iconColor: WidgetStateProperty.all(Colors.white),
               ),
               
