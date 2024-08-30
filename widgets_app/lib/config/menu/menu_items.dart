@@ -27,7 +27,7 @@ const appMenuItems = <MenuItem>[
     link: '/cards',
     icon: Icons.card_giftcard,
   ),
-    MenuItem(
+  MenuItem(
     title: 'ProgressIndicator',
     subTitle: 'Collection of progress indicators',
     link: '/progress',
@@ -39,10 +39,16 @@ const appMenuItems = <MenuItem>[
     link: '/snackbar',
     icon: Icons.info_outline,
   ),
-   MenuItem(
+  MenuItem(
     title: 'Animated Container',
     subTitle: 'Best animater Container',
     link: '/container',
     icon: Icons.check_box_outline_blank,
+  ),
+  MenuItem(
+    title: 'UI Controls',
+    subTitle: 'Different types of UI Controls',
+    link: '/UIControls',
+    icon: Icons.attractions_outlined,
   ),
 ];
