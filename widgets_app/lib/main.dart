@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      title: 'Widgets App',
       debugShowCheckedModeBanner: false,
       // --- --- -- Only have 0 to 7 colors
       theme: AppTheme(selectedColor: 0).getTheme(),
