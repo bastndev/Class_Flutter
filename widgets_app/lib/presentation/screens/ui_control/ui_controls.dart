@@ -42,43 +42,47 @@ class _UIControlsViewState extends State<_UIControlsView> {
             _switchValue = !_switchValue;
           }),
         ),
-
-        // --- --- --- radio
-        RadioListTile(
-          title: const Text('Car'),
-          subtitle: const Text('transportation with car'),
-          value: _Transportation.car,
-          groupValue: _selectedTransportation,
-          onChanged: (value) => setState(() {
-            _selectedTransportation = _Transportation.car;
-          }),
-        ),
-        RadioListTile(
-          title: const Text('Bike'),
-          subtitle: const Text('transportation with bike'),
-          value: _Transportation.bike,
-          groupValue: _selectedTransportation,
-          onChanged: (value) => setState(() {
-            _selectedTransportation = _Transportation.bike;
-          }),
-        ),
-        RadioListTile(
-          title: const Text('Bus'),
-          subtitle: const Text('transportation with bus'),
-          value: _Transportation.bus,
-          groupValue: _selectedTransportation,
-          onChanged: (value) => setState(() {
-            _selectedTransportation = _Transportation.bus;
-          }),
-        ),
-        RadioListTile(
-          title: const Text('train'),
-          subtitle: const Text('transportation with trains'),
-          value: _Transportation.train,
-          groupValue: _selectedTransportation,
-          onChanged: (value) => setState(() {
-            _selectedTransportation = _Transportation.train;
-          }),
+        ExpansionTile(
+          title: const Text('Method of transportation'),
+          subtitle: Text('Selected: $_selectedTransportation'),
+          children: [
+            RadioListTile(
+              title: const Text('Car'),
+              subtitle: const Text('transportation with car'),
+              value: _Transportation.car,
+              groupValue: _selectedTransportation,
+              onChanged: (value) => setState(() {
+                _selectedTransportation = _Transportation.car;
+              }),
+            ),
+            RadioListTile(
+              title: const Text('Bike'),
+              subtitle: const Text('transportation with bike'),
+              value: _Transportation.bike,
+              groupValue: _selectedTransportation,
+              onChanged: (value) => setState(() {
+                _selectedTransportation = _Transportation.bike;
+              }),
+            ),
+            RadioListTile(
+              title: const Text('Bus'),
+              subtitle: const Text('transportation with bus'),
+              value: _Transportation.bus,
+              groupValue: _selectedTransportation,
+              onChanged: (value) => setState(() {
+                _selectedTransportation = _Transportation.bus;
+              }),
+            ),
+            RadioListTile(
+              title: const Text('train'),
+              subtitle: const Text('transportation with trains'),
+              value: _Transportation.train,
+              groupValue: _selectedTransportation,
+              onChanged: (value) => setState(() {
+                _selectedTransportation = _Transportation.train;
+              }),
+            ),
+          ],
         ),
       ],
     );
