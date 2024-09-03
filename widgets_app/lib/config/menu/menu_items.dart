@@ -51,4 +51,10 @@ const appMenuItems = <MenuItem>[
     link: '/UIControls',
     icon: Icons.attractions_outlined,
   ),
+  MenuItem(
+    title: 'tutorial',
+    subTitle: 'App Tutorial',
+    link: '/tutorial',
+    icon: Icons.turned_in_not_outlined,
+  ),
 ];
