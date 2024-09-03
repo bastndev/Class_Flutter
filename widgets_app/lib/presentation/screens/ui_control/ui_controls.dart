@@ -27,6 +27,10 @@ enum _Transportation { car, bike, bus, train }
 
 class _UIControlsViewState extends State<_UIControlsView> {
   bool _switchValue = false;
+  bool _wantsBreakfast = false;
+  bool _wantsLunch = false;
+  bool _wantsDinner = false;
+
   _Transportation _selectedTransportation = _Transportation.car;
 
   @override
@@ -83,6 +87,29 @@ class _UIControlsViewState extends State<_UIControlsView> {
               }),
             ),
           ],
+        ),
+
+        // --- --- --- -- Check Box
+        CheckboxListTile(
+          title: const Text('Breakfast'),
+          value: _wantsBreakfast,
+          onChanged: (context) => setState(() {
+            _wantsBreakfast = !_wantsBreakfast;
+          }),
+        ),
+        CheckboxListTile(
+          title: const Text('Lunch'),
+          value: _wantsLunch,
+          onChanged: (context) => setState(() {
+            _wantsLunch = !_wantsLunch;
+          }),
+        ),
+        CheckboxListTile(
+          title: const Text('Dinner'),
+          value: _wantsDinner,
+          onChanged: (context) => setState(() {
+            _wantsDinner = !_wantsDinner;
+          }),
         ),
       ],
     );
