@@ -37,6 +37,7 @@ class _InfiniteScrollState extends State<InfiniteScroll> {
 
   Future loadNextPage() async {
     if (isLoading) return;
+    moveScrollBottom();
 
     setState(() {
       isLoading = true;
@@ -59,6 +60,7 @@ class _InfiniteScrollState extends State<InfiniteScroll> {
     }
   }
 
+// one
   Future<void> onRefresh() async {
     isLoading = true;
     setState(() {});
@@ -73,6 +75,17 @@ class _InfiniteScrollState extends State<InfiniteScroll> {
     addFiveImages();
 
     setState(() {});
+  }
+
+  void moveScrollBottom() {
+    if (_scrollController.position.pixels ==
+        _scrollController.position.maxScrollExtent) return;
+
+    _scrollController.animateTo(
+      _scrollController.position.pixels + 120,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.fastOutSlowIn,
+    );
   }
 
   void addFiveImages() {
