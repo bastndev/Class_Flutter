@@ -57,4 +57,10 @@ const appMenuItems = <MenuItem>[
     link: '/tutorial',
     icon: Icons.turned_in_not_outlined,
   ),
+  MenuItem(
+    title: 'Infinite',
+    subTitle: 'Infinite scroll',
+    link: '/infinite',
+    icon: Icons.loop,
+  ),
 ];
