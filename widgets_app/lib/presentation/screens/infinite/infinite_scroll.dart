@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -23,7 +24,7 @@ class _InfiniteScrollState extends State<InfiniteScroll> {
     _scrollController.addListener(() {
       if (_scrollController.position.pixels >=
           _scrollController.position.maxScrollExtent - 500) {
-        loadNextPate();
+        loadNextPage();
       }
     });
   }
@@ -31,21 +32,31 @@ class _InfiniteScrollState extends State<InfiniteScroll> {
   @override
   void dispose() {
     _scrollController.dispose();
-    isLoading = false;
     super.dispose();
   }
 
-  Future loadNextPate() async {
+  Future loadNextPage() async {
     if (isLoading) return;
-    setState(() {});
+
+    setState(() {
+      isLoading = true;
+    });
 
     await Future.delayed(const Duration(seconds: 2));
 
     addFiveImages();
-    isLoading = false;
+    setState(() {
+      isLoading = false;
+    });
 
-    //-TODO: Check if the widget is mounted
-    setState(() {});
+    if (_scrollController.position.pixels + 100 <=
+        _scrollController.position.maxScrollExtent) {
+      _scrollController.animateTo(
+        _scrollController.position.pixels + 120,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.fastOutSlowIn,
+      );
+    }
   }
 
   void addFiveImages() {
@@ -81,7 +92,12 @@ class _InfiniteScrollState extends State<InfiniteScroll> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => context.pop(),
-        child: const Icon(Icons.arrow_back_ios),
+        child: isLoading
+            ? SpinPerfect(
+                infinite: true,
+                child: const Icon(Icons.replay_outlined),
+              )
+            : FadeIn(child: const Icon(Icons.arrow_back_ios)),
       ),
     );
   }
