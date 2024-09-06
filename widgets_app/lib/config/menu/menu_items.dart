@@ -16,6 +16,12 @@ class MenuItem {
 
 const appMenuItems = <MenuItem>[
   MenuItem(
+    title: 'Counter Screen',
+    subTitle: 'Counter Screen with Riverpod',
+    link: '/counter',
+    icon: Icons.add,
+  ),
+  MenuItem(
     title: 'Buttons',
     subTitle: 'Different types of buttons',
     link: '/buttons',
@@ -62,11 +68,5 @@ const appMenuItems = <MenuItem>[
     subTitle: 'Infinite scroll',
     link: '/infinite',
     icon: Icons.loop,
-  ),
-  MenuItem(
-    title: 'Counter Screen',
-    subTitle: 'Counter Screen with Riverpod',
-    link: '/counter',
-    icon: Icons.add,
   ),
 ];

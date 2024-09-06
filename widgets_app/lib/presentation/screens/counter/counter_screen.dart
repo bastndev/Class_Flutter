@@ -15,6 +15,7 @@ class CounterScreen extends StatelessWidget {
           children: <Widget>[
             Text(
               'Valor:10',
+              // style: Theme.of(context).textTheme.titleLarge,
               style: TextStyle(fontWeight: FontWeight.w300, fontSize: 30),
             ),
           ],
