@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 const colorList = <Color>[
+  Color(0xFF0C0F14), //- IG
   Colors.blue,
   Colors.red,
   Colors.green,
@@ -9,6 +10,7 @@ const colorList = <Color>[
   Colors.yellow,
   Colors.pink,
   Colors.pinkAccent,
+  Color(0xFF0d1114), //- Rd
 ];
 
 class AppTheme {

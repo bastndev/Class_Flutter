@@ -6,7 +6,7 @@ class ThemeChangerScreen extends ConsumerWidget {
   const ThemeChangerScreen({super.key});
 
   @override
-  Widget build(BuildContext context, ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final bool isDarkMode = ref.watch(isDarkModeProvider);
     return Scaffold(
       appBar: AppBar(
@@ -27,8 +27,9 @@ class _ThemeChangerView extends ConsumerWidget {
   const _ThemeChangerView();
 
   @override
-  Widget build(BuildContext context, ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final List<Color> colors = ref.watch(colorListProvider);
+    final selectedColor = ref.watch(selectedColorProvider);
 
     return ListView.builder(
       itemCount: colors.length,
@@ -40,8 +41,11 @@ class _ThemeChangerView extends ConsumerWidget {
           subtitle: Text('#${color.value.toRadixString(16)}'),
           activeColor: color,
           value: index,
-          groupValue: 0,
-          onChanged: (value) {},
+          groupValue: selectedColor,
+          onChanged: (int? value) {
+            ref.read(selectedColorProvider.notifier).state = value!;
+            // ref.read(selectedColorProvider.notifier).state = index;
+          },
         );
       },
     );
