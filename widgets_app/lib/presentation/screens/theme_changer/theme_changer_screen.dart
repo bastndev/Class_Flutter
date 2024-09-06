@@ -14,7 +14,9 @@ class ThemeChangerScreen extends ConsumerWidget {
         actions: [
           IconButton(
             icon: Icon(isDarkMode ? Icons.wb_sunny : Icons.brightness_3),
-            onPressed: () {},
+            onPressed: () {
+              ref.read(isDarkModeProvider.notifier).update((state) => !state);
+            },
           ),
         ],
       ),
