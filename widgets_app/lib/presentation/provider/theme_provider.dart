@@ -1,0 +1,5 @@
+// bool isDarkMode = false;
+
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+final isDarkModeProvider = StateProvider((ref) => true);

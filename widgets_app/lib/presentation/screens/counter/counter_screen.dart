@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:widgets_app/presentation/provider/counter_provider.dart';
+import 'package:widgets_app/presentation/provider/theme_provider.dart';
 
 class CounterScreen extends ConsumerWidget {
   const CounterScreen({super.key});
@@ -8,10 +9,19 @@ class CounterScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final int clickCounter = ref.watch(counterProvider);
+    final bool isDarkMode = ref.watch(isDarkModeProvider);
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Counter Screen'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              ref.read(isDarkModeProvider.notifier).state = !isDarkMode;
+            },
+            icon: Icon(isDarkMode ? Icons.wb_sunny : Icons.brightness_3),
+          ),
+        ],
       ),
       body: Center(
         child: Column(
