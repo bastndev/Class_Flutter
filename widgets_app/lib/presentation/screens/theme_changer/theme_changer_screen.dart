@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:widgets_app/presentation/provider/theme_provider.dart';
+import 'package:widgets_app/config/theme/theme_provider.dart';
 
 class ThemeChangerScreen extends ConsumerWidget {
   const ThemeChangerScreen({super.key});
