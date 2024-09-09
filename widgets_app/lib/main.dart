@@ -17,17 +17,17 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDarkMode = ref.watch(isDarkModeProvider);
-    final selectColor = ref.watch(selectedColorProvider);
+    // final isDarkMode = ref.watch(isDarkModeProvider);
+    // final selectColor = ref.watch(selectedColorProvider);
+    final AppTheme appTheme = ref.watch(themeNotifierProvider);
 
     return MaterialApp.router(
       title: 'Widgets App',
       debugShowCheckedModeBanner: false,
-      // --- --- -- Only have 0 to 7 colors
-      theme: AppTheme(selectedColor: selectColor, isDarkMode: isDarkMode)
-          .getTheme(),
       // --- -- --- --- Open the app with the HomeScreen with go_router
       routerConfig: appRouter,
+      // --- --- -- Only have 0 to 7 colors APTheme 
+      theme: appTheme.getTheme(),
     );
   }
 }
