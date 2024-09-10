@@ -1,3 +1,5 @@
+import 'package:clean_architecture/config/routes/app_router.dart';
+import 'package:clean_architecture/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -9,16 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter APP 2'),
-        ),
-        body: const Center(
-          child: Text('Main Screen'),
-        ),
-      ),
+      theme: AppTheme().getTheme(),
     );
   }
 }
