@@ -1,3 +1,4 @@
+import 'package:clean_architecture/config/constants/environment.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,9 +9,10 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Movies'),
+        centerTitle: true,
       ),
-      body: const Center(
-        child: Text('Home Screen 1'),
+      body: Center(
+        child: Text(Environment.theMovieDBKey),
       ),
     );
   }
