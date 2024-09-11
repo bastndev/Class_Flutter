@@ -1,4 +1,4 @@
-import 'package:clean_architecture/data/domain/entities/movie.dart';
+import 'package:clean_architecture/src/data/domain/entities/movie.dart';
 
 // this sis code can your help change API, of MovieBD netflix etc
 abstract class MoviesRepositories {

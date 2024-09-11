@@ -1,6 +1,6 @@
 import 'package:clean_architecture/config/constants/environment.dart';
-import 'package:clean_architecture/data/domain/datasource/movies_datasource.dart';
-import 'package:clean_architecture/data/domain/entities/movie.dart';
+import 'package:clean_architecture/src/data/domain/datasource/movies_datasource.dart';
+import 'package:clean_architecture/src/data/domain/entities/movie.dart';
 import 'package:dio/dio.dart';
 
 class MovieDbDataSource extends MoviesDataSource {
