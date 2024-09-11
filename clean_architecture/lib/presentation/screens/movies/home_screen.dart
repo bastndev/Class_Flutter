@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Movies'),
       ),
       body: const Center(
-        child: Text('Home Screen 2'),
+        child: Text('Home Screen 1'),
       ),
     );
   }
