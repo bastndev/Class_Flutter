@@ -1,5 +1,5 @@
 import 'package:clean_architecture/src/data/domain/entities/movie.dart';
-import 'package:clean_architecture/src/providers/movies/movies_repository_provider.dart';
+import 'package:clean_architecture/src/presentation/providers/movies/movies_repository_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final nowPlayingMoviesProvider =
