@@ -9,6 +9,9 @@ This is project is learning flutter 2.0 but only need for project
 
 <img src="/assets/github/widgets.png" alt="">
 
+**Movies - Clean-Architecture**
+
+<img src="/assets/github/movies.png" alt="">
 >- Tips Clear architecture
 
 - UI 
