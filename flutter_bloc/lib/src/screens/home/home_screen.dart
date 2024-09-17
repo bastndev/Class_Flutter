@@ -6,24 +6,40 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Map<String, String>> items = [
+      {
+        'title': 'Cubit Counter',
+        'subtitle': 'Cubit is a lightweight state management solution',
+        'route': '/cubit',
+      },
+      {
+        'title': 'Bloc Counter',
+        'subtitle': 'Bloc is a more advanced state management solution',
+        'route': '/bloc',
+      },
+    ];
+
     return Scaffold(
-      body: ListView(
-        children: [
-          ListTile(
-            title: const Text('Cubit Counter'),
-            subtitle:
-                const Text('Cubit is a lightweight state management solution'),
+      appBar: AppBar(
+        title: const Text('Home Screen'),
+      ),
+      body: ListView.separated(
+        itemCount: items.length,
+        itemBuilder: (context, index) {
+          final item = items[index];
+          return ListTile(
+            title: Text(
+              item['title']!,
+              style: const TextStyle(
+                  color: Color(0xFF2F2F2F),
+                  fontWeight: FontWeight.w600),
+            ),
+            subtitle: Text(item['subtitle']!),
             trailing: const Icon(Icons.arrow_forward_ios),
-            onTap: () => context.push('/cubit'),
-          ),
-          ListTile(
-            title: const Text('Bloc Counter'),
-            subtitle:
-                const Text('Bloc is a more advanced state management solution'),
-            trailing: const Icon(Icons.arrow_forward_ios),
-            onTap: () => context.push('/bloc'),
-          ),
-        ],
+            onTap: () => context.push(item['route']!),
+          );
+        },
+        separatorBuilder: (context, index) => const Divider(),
       ),
     );
   }
