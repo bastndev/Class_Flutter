@@ -8,8 +8,8 @@ final appRouter = GoRouter(
       builder: (context, state) => const HomeScreen(),
     ),
     GoRoute(
-      path: '/cubits',
-      builder: (context, state) => const HomeScreen(),
+      path: '/cubit',
+      builder: (context, state) => const CubitCounterScreen(),
     ),
   ],
 );

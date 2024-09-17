@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,10 +10,11 @@ class HomeScreen extends StatelessWidget {
       body: ListView(
         children: [
           ListTile(
-            title: const Text('Cubits'),
-            subtitle: const Text('Cubit is a lightweight state management solution'),
+            title: const Text('Cubit Counter'),
+            subtitle:
+                const Text('Cubit is a lightweight state management solution'),
             trailing: const Icon(Icons.arrow_forward_ios),
-            onTap: () {},
+            onTap: () => context.push('/cubit'),
           ),
         ],
       ),
