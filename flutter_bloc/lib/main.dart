@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/config/theme/app_theme.dart';
-import 'package:flutter_bloc/config/routes/app_router.dart';
+import 'package:flutter_bloc_project/config/theme/app_theme.dart';
+import 'package:flutter_bloc_project/config/routes/app_router.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
