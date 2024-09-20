@@ -12,11 +12,11 @@ class HomeScreen extends StatelessWidget {
         'subtitle': 'Cubit is a lightweight state management solution',
         'route': '/cubit',
       },
-      // {
-      //   'title': 'Bloc Counter',
-      //   'subtitle': 'Bloc is a more advanced state management solution',
-      //   'route': '/bloc',
-      // },
+      {
+        'title': 'Bloc Counter',
+        'subtitle': 'Bloc is a more advanced state management solution',
+        'route': '/bloc',
+      },
     ];
 
     return Scaffold(
@@ -31,8 +31,7 @@ class HomeScreen extends StatelessWidget {
             title: Text(
               item['title']!,
               style: const TextStyle(
-                  color: Color(0xFF2F2F2F),
-                  fontWeight: FontWeight.w600),
+                  color: Color(0xFF2F2F2F), fontWeight: FontWeight.w600),
             ),
             subtitle: Text(item['subtitle']!),
             trailing: const Icon(Icons.arrow_forward_ios),
