@@ -17,6 +17,11 @@ class HomeScreen extends StatelessWidget {
         'subtitle': 'Bloc is a more advanced state management solution',
         'route': '/bloc',
       },
+      // {
+      //   'title': 'Bloc Counter',
+      //   'subtitle': 'Bloc is a more advanced state management solution',
+      //   'route': '/bloc',
+      // },
     ];
 
     return Scaffold(
