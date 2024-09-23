@@ -27,12 +27,11 @@ class CustomRegisterForm extends StatelessWidget {
     );
 
     return TextFormField(
-      onChanged: (value) {
-        // print('Email: $value');
-      },
+      onChanged: onChanged,
+      validator: validator,
       decoration: InputDecoration(
-        labelText: 'Email',
-        hintText: 'Enter your email',
+        label: label != null ? Text(label!) : null,
+        hintText: hint,
         hintStyle: const TextStyle(color: Colors.grey),
         labelStyle: TextStyle(color: theme),
         enabledBorder: border,
@@ -40,7 +39,7 @@ class CustomRegisterForm extends StatelessWidget {
         isDense: true,
 
         // --- --- --- Error Style
-        errorText: 'Invalid email',
+        errorText: errorMessage,
         errorBorder:
             border.copyWith(borderSide: const BorderSide(color: Colors.red)),
         focusedErrorBorder:
