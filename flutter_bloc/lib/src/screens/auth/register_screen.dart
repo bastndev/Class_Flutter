@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc_project/src/screens/auth/widget/button_save.dart';
+import 'package:flutter_bloc_project/src/screens/auth/widget/register_form.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -19,25 +21,19 @@ class _RegisterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              const SizedBox(height: 20),
-              const FlutterLogo(size: 150),
-              TextFormField(),
-              TextFormField(),
-              TextFormField(),
-              const SizedBox(height: 20),
-              FilledButton.tonalIcon(
-                onPressed: () {},
-                icon: const Icon(Icons.save),
-                label: const Text('Create new user'),
-              ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
+              FlutterLogo(size: 150),
+              RegisterForm(),
+              SizedBox(height: 20),
+              ButtonSave(),
+              SizedBox(height: 20),
             ],
           ),
         ),
