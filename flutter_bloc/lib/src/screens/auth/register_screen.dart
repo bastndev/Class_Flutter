@@ -48,7 +48,9 @@ class _RegisterForm extends StatelessWidget {
       child: Column(
         children: [
           // --- --- -- CustomRegisterForm
+          SizedBox(height: 10),
           CustomRegisterForm(),
+          SizedBox(height: 10),
           CustomRegisterForm(),
           SizedBox(height: 20),
           // --- --- -- CustomSaveButtonSave
