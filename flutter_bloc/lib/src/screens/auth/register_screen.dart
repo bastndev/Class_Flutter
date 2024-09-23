@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'widgets/widgets.dart';
 
-
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
 
@@ -30,13 +29,31 @@ class _RegisterView extends StatelessWidget {
             children: [
               SizedBox(height: 20),
               FlutterLogo(size: 150),
-              CustomRegisterForm(),
-              SizedBox(height: 20),
-              SaveButtonSave(),
+              _RegisterForm(),
               SizedBox(height: 20),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _RegisterForm extends StatelessWidget {
+  const _RegisterForm();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Form(
+      child: Column(
+        children: [
+          // --- --- -- CustomRegisterForm
+          CustomRegisterForm(),
+          CustomRegisterForm(),
+          SizedBox(height: 20),
+          // --- --- -- CustomSaveButtonSave
+          SaveButtonSave(),
+        ],
       ),
     );
   }

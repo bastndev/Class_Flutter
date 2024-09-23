@@ -5,6 +5,10 @@ class CustomRegisterForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField();
+    return TextFormField(
+      onChanged: (value) {
+        print('Email: $value');
+      },
+    );
   }
 }
