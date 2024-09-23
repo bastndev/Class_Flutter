@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc_project/src/screens/auth/widget/button_save.dart';
-import 'package:flutter_bloc_project/src/screens/auth/widget/register_form.dart';
+import 'widgets/widgets.dart';
+
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -30,9 +30,9 @@ class _RegisterView extends StatelessWidget {
             children: [
               SizedBox(height: 20),
               FlutterLogo(size: 150),
-              RegisterForm(),
+              CustomRegisterForm(),
               SizedBox(height: 20),
-              ButtonSave(),
+              SaveButtonSave(),
               SizedBox(height: 20),
             ],
           ),
