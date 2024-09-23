@@ -47,11 +47,22 @@ class _RegisterForm extends StatelessWidget {
     return const Form(
       child: Column(
         children: [
-          // --- --- -- CustomRegisterForm
+          // --- --- --- -- CustomRegisterForm
           SizedBox(height: 10),
-          CustomRegisterForm(),
+          CustomRegisterForm(
+            label: 'Name',
+            hint: 'Enter your name',
+          ),
           SizedBox(height: 10),
-          CustomRegisterForm(),
+          CustomRegisterForm(
+            label: 'Email',
+            hint: 'Enter your name',
+          ),
+          SizedBox(height: 10),
+          CustomRegisterForm(
+            label: 'Password',
+            obscureText: 'true',
+          ),
           SizedBox(height: 20),
           // --- --- -- CustomSaveButtonSave
           SaveButtonSave(),

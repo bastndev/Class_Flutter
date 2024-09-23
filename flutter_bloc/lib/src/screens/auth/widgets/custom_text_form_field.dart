@@ -7,6 +7,7 @@ class CustomRegisterForm extends StatelessWidget {
   final String? errorMessage;
   final void Function(String)? onChanged;
   final String? Function(String?)? validator;
+  final String? obscureText;
 
   const CustomRegisterForm({
     super.key,
@@ -15,6 +16,7 @@ class CustomRegisterForm extends StatelessWidget {
     this.errorMessage,
     this.onChanged,
     this.validator,
+    this.obscureText,
   });
 
   @override
@@ -29,6 +31,7 @@ class CustomRegisterForm extends StatelessWidget {
     return TextFormField(
       onChanged: onChanged,
       validator: validator,
+      obscureText: obscureText == 'true',
       decoration: InputDecoration(
         label: label != null ? Text(label!) : null,
         hintText: hint,
