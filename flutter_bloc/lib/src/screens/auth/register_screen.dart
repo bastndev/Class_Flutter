@@ -61,7 +61,7 @@ class _RegisterForm extends StatelessWidget {
           SizedBox(height: 10),
           CustomRegisterForm(
             label: 'Password',
-            obscureText: 'true',
+            obscureText: true,
           ),
           SizedBox(height: 20),
           // --- --- -- CustomSaveButtonSave
