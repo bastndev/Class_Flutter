@@ -65,23 +65,54 @@ class _RegisterFormState extends State<_RegisterForm> {
             label: 'Name',
             hint: 'Enter your name',
             onChanged: (value) => userName = value,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter your name';
+              }
+              if (value.trim().isEmpty) return 'Please enter your name';
+              if (value.length < 3) return '3 characters minimum';
+              return null;
+            },
           ),
           const SizedBox(height: 10),
           CustomRegisterForm(
             label: 'Email',
             hint: 'Enter your name',
             onChanged: (value) => email = value,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter your name';
+              }
+              if (value.trim().isEmpty) return 'Please enter your name';
+              final emailRegExp = RegExp(
+                r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
+              );
+              if (!emailRegExp.hasMatch(value)) return 'Invalid email';
+              return null;
+            },
           ),
           const SizedBox(height: 10),
           CustomRegisterForm(
             label: 'Password',
             obscureText: true,
             onChanged: (value) => password = value,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter your name';
+              }
+              if (value.trim().isEmpty) return 'Please enter your name';
+              if (value.length < 3) return '3 characters minimum';
+              return null;
+            },
           ),
           const SizedBox(height: 20),
           // --- --- -- CustomSaveButtonSave
           SaveButtonSave(
             onPressed2: () {
+              final isValid = _formKey.currentState!.validate();
+              if (!isValid) {
+                return;
+              }
               print('$userName $email $password');
             },
           ),
