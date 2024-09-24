@@ -39,33 +39,52 @@ class _RegisterView extends StatelessWidget {
   }
 }
 
-class _RegisterForm extends StatelessWidget {
+class _RegisterForm extends StatefulWidget {
   const _RegisterForm();
 
   @override
+  State<_RegisterForm> createState() => _RegisterFormState();
+}
+
+class _RegisterFormState extends State<_RegisterForm> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  String userName = '';
+  String email = '';
+  String password = '';
+
+  @override
   Widget build(BuildContext context) {
-    return const Form(
+    return Form(
+      key: _formKey,
       child: Column(
         children: [
           // --- --- --- -- CustomRegisterForm
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           CustomRegisterForm(
             label: 'Name',
             hint: 'Enter your name',
+            onChanged: (value) => userName = value,
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           CustomRegisterForm(
             label: 'Email',
             hint: 'Enter your name',
+            onChanged: (value) => email = value,
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           CustomRegisterForm(
             label: 'Password',
             obscureText: true,
+            onChanged: (value) => password = value,
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           // --- --- -- CustomSaveButtonSave
-          SaveButtonSave(),
+          SaveButtonSave(
+            onPressed2: () {
+              print('$userName $email $password');
+            },
+          ),
         ],
       ),
     );
