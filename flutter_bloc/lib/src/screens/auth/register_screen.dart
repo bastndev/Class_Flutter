@@ -121,10 +121,9 @@ class _RegisterFormState extends State<_RegisterForm> {
           // --- --- -- CustomSaveButtonSave
           SaveButtonSave(
             onPressed2: () {
-              final isValid = _formKey.currentState!.validate();
-              if (!isValid) {
-                return;
-              }
+              // final isValid = _formKey.currentState!.validate();
+              // if (!isValid) return;
+
               registerCubit.onSubmit();
             },
           ),
