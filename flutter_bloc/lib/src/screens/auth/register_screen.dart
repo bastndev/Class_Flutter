@@ -44,22 +44,16 @@ class _RegisterView extends StatelessWidget {
   }
 }
 
-class _RegisterForm extends StatefulWidget {
+class _RegisterForm extends StatelessWidget {
   const _RegisterForm();
-
-  @override
-  State<_RegisterForm> createState() => _RegisterFormState();
-}
-
-class _RegisterFormState extends State<_RegisterForm> {
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     final registerCubit = context.watch<RegisterCubit>();
+    final userName = registerCubit.state.userName;
+    final password = registerCubit.state.password;
 
     return Form(
-      key: _formKey,
       child: Column(
         children: [
           // --- --- --- -- CustomRegisterForm
@@ -67,18 +61,8 @@ class _RegisterFormState extends State<_RegisterForm> {
           CustomRegisterForm(
             label: 'Name',
             hint: 'Enter your name',
-            onChanged: (value) {
-              registerCubit.userNameChanged(value);
-              _formKey.currentState?.validate();
-            },
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter your name';
-              }
-              if (value.trim().isEmpty) return 'Please enter your name';
-              if (value.length < 3) return '3 characters minimum';
-              return null;
-            },
+            onChanged: registerCubit.userNameChanged,
+            errorMessage: userName.errorMessage,
           ),
           const SizedBox(height: 10),
           CustomRegisterForm(
@@ -86,7 +70,6 @@ class _RegisterFormState extends State<_RegisterForm> {
             hint: 'Enter your name',
             onChanged: (value) {
               registerCubit.emailChanged(value);
-              _formKey.currentState?.validate();
             },
             validator: (value) {
               if (value == null || value.isEmpty) {
@@ -104,26 +87,13 @@ class _RegisterFormState extends State<_RegisterForm> {
           CustomRegisterForm(
             label: 'Password',
             obscureText: true,
-            onChanged: (value) {
-              registerCubit.passwordChanged(value);
-              _formKey.currentState?.validate();
-            },
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter your name';
-              }
-              if (value.trim().isEmpty) return 'Please enter your name';
-              if (value.length < 3) return '3 characters minimum';
-              return null;
-            },
+            onChanged: registerCubit.passwordChanged,
+            errorMessage: password.errorMessage,
           ),
           const SizedBox(height: 20),
           // --- --- -- CustomSaveButtonSave
           SaveButtonSave(
             onPressed2: () {
-              // final isValid = _formKey.currentState!.validate();
-              // if (!isValid) return;
-
               registerCubit.onSubmit();
             },
           ),

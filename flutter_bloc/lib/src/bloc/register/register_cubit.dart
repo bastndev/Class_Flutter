@@ -7,8 +7,20 @@ part 'register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterFormState> {
   RegisterCubit() : super(const RegisterFormState());
-
   void onSubmit() {
+
+    emit(state.copyWith(
+      formStatus: FormStatus.validating,
+      userName: Username.dirty(value: state.userName.value),
+      password: Password.dirty(value: state.password.value),
+
+      isValid: Formz.validate([
+        state.userName,
+        state.password,
+        // :TODO: add email validation
+      ])
+    ));
+
     print('Cubit Submit $state');
   }
 
