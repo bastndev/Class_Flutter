@@ -51,6 +51,7 @@ class _RegisterForm extends StatelessWidget {
   Widget build(BuildContext context) {
     final registerCubit = context.watch<RegisterCubit>();
     final userName = registerCubit.state.userName;
+    final email = registerCubit.state.email;
     final password = registerCubit.state.password;
 
     return Form(
@@ -68,20 +69,8 @@ class _RegisterForm extends StatelessWidget {
           CustomRegisterForm(
             label: 'Email',
             hint: 'Enter your name',
-            onChanged: (value) {
-              registerCubit.emailChanged(value);
-            },
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter your name';
-              }
-              if (value.trim().isEmpty) return 'Please enter your name';
-              final emailRegExp = RegExp(
-                r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
-              );
-              if (!emailRegExp.hasMatch(value)) return 'Invalid email';
-              return null;
-            },
+            onChanged: registerCubit.emailChanged,
+            errorMessage: email.errorMessage,
           ),
           const SizedBox(height: 10),
           CustomRegisterForm(
