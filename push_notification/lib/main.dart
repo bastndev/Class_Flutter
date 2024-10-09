@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
           title: const Text('Flutter APP'),
         ),
         body: const Center(
-          child: Text('Main Screen'),
+          child: Text('Push Notification'),
         ),
       ),
     );
