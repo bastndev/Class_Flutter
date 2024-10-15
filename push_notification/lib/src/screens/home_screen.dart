@@ -27,6 +27,13 @@ class _HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return ListView.builder(
+      itemCount: 10,
+      itemBuilder: (BuildContext context, int index) {
+        return ListTile(
+          title: Text('Hello World $index'),
+        );
+      },
+    );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:push_notification/config/routes/app_router.dart';
 import 'package:push_notification/config/theme/app_theme.dart';
 
 void main(List<String> args) {
@@ -10,17 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
       theme: AppTheme().getTheme(),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter APP '),
-        ),
-        body: const Center(
-          child: Text('Push Notification'),
-        ),
-      ),
     );
   }
 }
