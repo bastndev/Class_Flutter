@@ -7,7 +7,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter APP'),
+        title: const Text('Flutter Practice'),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
