@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme().getTheme(),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Flutter APP'),
+          title: const Text('Flutter APP '),
         ),
         body: const Center(
           child: Text('Push Notification'),
