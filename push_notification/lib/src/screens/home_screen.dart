@@ -28,7 +28,7 @@ class _HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 10,
+      itemCount: 1,
       itemBuilder: (BuildContext context, int index) {
         return ListTile(
           title: Text('Hello World $index'),
