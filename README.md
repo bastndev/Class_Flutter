@@ -13,10 +13,6 @@ This is project is learning flutter 2.0 but only need for project
 >- Riverpod
 
 <img src="/assets/github/movies.png" alt="">
->- Tips Clear architecture
 
-- UI 
-- Presentation
-- use case
-- Repository and DataSource
-- back to information from UI
+##  Clear architecture 💙
+<img src="/assets/github/clean_architecture.png" alt="">
