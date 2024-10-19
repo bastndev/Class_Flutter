@@ -2,7 +2,7 @@ part of 'notifications_bloc.dart';
 
 class NotificationsState extends Equatable {
   final AuthorizationStatus status;
-// :TODO: create  notifications model
+// TODO: create  notifications model
   final List<dynamic> notifications;
 
   const NotificationsState({
