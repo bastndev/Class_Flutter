@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:push_notification/config/routes/app_router.dart';
-import 'package:push_notification/config/theme/app_theme.dart';
-
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:push_notification/config/config.dart';
 import 'src/push_notification/presentation/bloc/notifications_bloc.dart';
 
-void main(List<String> args) {
+void main(List<String> args) async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await dotenv.load(fileName: ".env");
+
   runApp(MultiBlocProvider(
     providers: [BlocProvider(create: (_) => NotificationsBloc())],
     child: const MyApp(),
