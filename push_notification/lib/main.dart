@@ -6,8 +6,10 @@ import 'src/push_notification/presentation/bloc/notifications_bloc.dart';
 
 void main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  
   await dotenv.load(fileName: ".env");
+
+  await NotificationsBloc.initializeFCM();
 
   runApp(MultiBlocProvider(
     providers: [BlocProvider(create: (_) => NotificationsBloc())],
