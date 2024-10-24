@@ -35,7 +35,7 @@ class _HomeView extends StatelessWidget {
       itemCount: 1,
       itemBuilder: (BuildContext context, int index) {
         return ListTile(
-          title: Text('Hello World $index'),
+          title: Text('Hello 2 World $index'),
         );
       },
     );
