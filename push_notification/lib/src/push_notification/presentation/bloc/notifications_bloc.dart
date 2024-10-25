@@ -16,7 +16,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
     // Verify status on app notification
     _initialStatusCheck();
 
-    // Listener fpr notifications foreground
+    // Listener fpr notifications foreground  messages
     _onForegroundMessage();
   }
 
