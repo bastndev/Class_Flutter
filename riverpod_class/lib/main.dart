@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:riverpod_class/screens/home/home_screen.dart';
 
-void main(List<String> args) {
+void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter APP'),
-        ),
-        body: const Center(
-          child: Text('Hello Riverpod!'),
-        ),
+      title: '',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
       ),
+      home: const HomeScreen(),
     );
   }
 }
