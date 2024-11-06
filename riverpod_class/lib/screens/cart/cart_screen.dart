@@ -16,10 +16,12 @@ class _CartScreenState extends ConsumerState<CartScreen> {
   @override
   Widget build(BuildContext context) {
     final cartProducts = ref.watch(cartNotifierProvider);
+    final total = ref.watch(cartTotalProvider);
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Your Cart'),
-        centerTitle: true,
+        title: Text('Total Price is = (£ $total)'),
+        centerTitle: false,
         // actions: [],
       ),
       body: Container(
