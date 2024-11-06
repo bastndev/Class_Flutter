@@ -22,7 +22,7 @@ class CartNotifier extends Notifier<Set<Product>> {
 
   void removeProduct(Product product) {
     if(state.contains(product)) {
-      state = state.where((element) => element != product).toSet();
+      state = state.where((p) => p.id != product.id).toSet();
     }
   }
 
