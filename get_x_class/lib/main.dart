@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/state_manager.dart';
+import 'package:get/get.dart';
+import 'package:get_x_class/counter_controller.dart';
 // import 'package:get/get.dart';
 
 void main(List<String> args) {
@@ -11,34 +12,33 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: CounterApp(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
-  HomePage({super.key});
-
-  final _counter = 0.obs;
+class CounterApp extends StatelessWidget {
+  const CounterApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(CounterController());
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('GetX Counter App'),
+      ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('Hello World'),
-            Obx(() => Text('Counter $_counter')),
-          ],
+        child: Obx(
+          () => Text(
+            'Hello ${controller.count}',
+            style: const TextStyle(fontSize: 24),
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _counter.value++;
-        },
+        onPressed: controller.increment,
         child: const Icon(Icons.add),
       ),
     );
