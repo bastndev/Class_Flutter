@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_x_class/api_service.dart';
 import 'package:get_x_class/counter_controller.dart';
-// import 'package:get/get.dart';
 
-void main(List<String> args) {
+void main(List<String> args) async {
+  Get.lazyPut<ApiService>(() => ApiService());
   runApp(const MyApp());
 }
 
@@ -14,7 +15,40 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CounterApp(),
+      // home: CounterApp(),
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final ApiService apiService = Get.find();
+    // final apiService = Get.find<ApiService>();
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('GetX API Service'),
+      ),
+      body: Center(
+        child: FutureBuilder<String>(
+          future: apiService.fetchData(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const CircularProgressIndicator();
+            } else {
+              if (snapshot.hasError) {
+                return Text('Error: ${snapshot.error}');
+              } else {
+                return Text('Data: ${snapshot.data}');
+              }
+            }
+          },
+        ),
+      ),
     );
   }
 }
