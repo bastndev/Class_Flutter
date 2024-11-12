@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_x_class/api_service.dart';
 import 'package:get_x_class/counter_controller.dart';
+import 'package:get_x_class/name_reactive_screen.dart';
 import 'package:get_x_class/next_page.dart';
 
 void main(List<String> args) async {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
       // home: CounterApp(),
-      home: HomePage(),
+      home: NameReactiveScreen(),
     );
   }
 }
