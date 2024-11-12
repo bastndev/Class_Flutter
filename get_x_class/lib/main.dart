@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_x_class/api_service.dart';
 import 'package:get_x_class/counter_controller.dart';
+import 'package:get_x_class/next_page.dart';
 
 void main(List<String> args) async {
   Get.lazyPut<ApiService>(() => ApiService());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
       // home: CounterApp(),
       home: HomePage(),
@@ -49,9 +50,17 @@ class HomePage extends StatelessWidget {
           },
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Get.to(const NextPage());
+        },
+        child: const Icon(Icons.navigate_next),
+      ),
     );
   }
 }
+
+
 
 class CounterApp extends StatelessWidget {
   const CounterApp({super.key});
