@@ -1,3 +1,4 @@
+import 'package:bloc_class/config/routes/app_router.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -9,16 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter APP'),
-        ),
-        body: const Center(
-          child: Text('Hello World! 322'),
-        ),
-      ),
     );
   }
 }
