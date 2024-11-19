@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             ElevatedButton(
               onPressed: _getRandomPhrases,
-              child: const Text("Change phrase"),
+              child: const Text("Change phrase 2"),
             ),
           ],
         ),
