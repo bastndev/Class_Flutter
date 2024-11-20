@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(height: 20),
           FloatingActionButton(
             onPressed: () {
-              counterCubit.increment();
+              counterCubit.decrement();
             },
             tooltip: 'Decrement',
             child: const Icon(Icons.remove),
